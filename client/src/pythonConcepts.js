@@ -1,4 +1,5 @@
-export const pythonDefault = 'name = input("What is your name? ")\nprint(f"Hello, {name}!")';
+// A simple, non-interactive default code for Python
+export const pythonDefault = 'print("Hello, CodeOgram!")';
 
 export const pythonConcepts = [
   {
