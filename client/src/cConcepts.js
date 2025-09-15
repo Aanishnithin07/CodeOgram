@@ -1,0 +1,15 @@
+export const cDefault = '#include <stdio.h>\n\nint main() {\n    printf("Hello, World!\\n");\n    return 0;\n}';
+
+export const cConcepts = [
+  { id: 1, title: 'Program Structure', explanation: 'A C program must have a `main()` function, which is the entry point. `#include <stdio.h>` is a preprocessor command to include standard input/output functions.', codeSnippet: `#include <stdio.h>\n\nint main() {\n  printf("Hello!\\n");\n  return 0;\n}` },
+  { id: 2, title: 'Variables and Types', explanation: 'In C, you must declare the type of a variable. Common types are `int`, `float`, `double`, and `char`.', codeSnippet: `int myNum = 5;\nfloat myFloat = 5.99;\nchar myLetter = 'D';` },
+  { id: 3, title: 'Operators', explanation: 'Used to perform operations on variables, such as arithmetic (+, -, *, /) and comparison (==, >, <).', codeSnippet: `int x = 10;\nint y = 5;\nprintf("%d\\n", x + y); // 15\nprintf("%d\\n", x > y); // 1 (true)` },
+  { id: 4, title: 'If...Else', explanation: 'Conditional statements that execute different blocks of code based on a condition.', codeSnippet: `if (20 > 18) {\n  printf("20 is greater than 18\\n");\n}` },
+  { id: 5, title: 'While Loops', explanation: 'Loops through a block of code as long as a specified condition is true.', codeSnippet: `int i = 0;\nwhile (i < 5) {\n  printf("%d\\n", i);\n  i++;\n}` },
+  { id: 6, title: 'For Loops', explanation: 'Allows you to execute a block of code a specific number of times.', codeSnippet: `#include <stdio.h>\n\nint main() {\n  for (int i = 0; i < 5; i++) {\n    printf("%d\\n", i);\n  }\n  return 0;\n}` },
+  { id: 7, title: 'Arrays', explanation: 'Used to store multiple values of the same type in a single variable.', codeSnippet: `int myNumbers[] = {25, 50, 75, 100};\nprintf("%d\\n", myNumbers[0]); // 25` },
+  { id: 8, title: 'Strings (char arrays)', explanation: 'In C, a string is an array of characters, terminated by a null character `\\0`.', codeSnippet: `char greetings[] = "Hello World!";\nprintf("%s\\n", greetings);` },
+  { id: 9, title: 'Pointers', explanation: 'A variable that stores the memory address of another variable. The `&` operator gets the address, and the `*` operator gets the value at that address (dereferencing).', codeSnippet: `int myAge = 43;\nint* ptr = &myAge;\nprintf("%p\\n", ptr);  // address\nprintf("%d\\n", *ptr); // value (43)` },
+  { id: 10, title: 'Functions', explanation: 'A function is a block of code that performs a specific task. It can be reused.', codeSnippet: `void myFunction() {\n  printf("I just got executed!\\n");\n}\n\nint main() {\n  myFunction();\n  return 0;\n}` },
+  { id: 11, title: 'Structs', explanation: 'Structures are a way to group several related variables into one place. Each variable in the structure is known as a member.', codeSnippet: `struct myStructure {\n  int myNum;\n  char myLetter;\n};\n\nint main() {\n  struct myStructure s1;\n  s1.myNum = 13;\n  s1.myLetter = 'B';\n  printf("%d %c\\n", s1.myNum, s1.myLetter);\n  return 0;\n}` }
+];

@@ -1,0 +1,109 @@
+.concept-feed-container {
+  padding: 20px 30px;
+  background-color: var(--panel-bg);
+  border-top: 1px solid var(--panel-border);
+  position: relative; /* Needed to position scroll buttons */
+}
+
+/* New container for the title and buttons */
+.feed-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.feed-title {
+  margin: 0;
+  text-align: left;
+  font-size: 20px;
+}
+
+.scroll-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.scroll-button {
+  background-color: var(--button-bg);
+  color: var(--text-color-secondary);
+  border: 1px solid var(--panel-border);
+  border-radius: 50%; /* Makes it a circle */
+  width: 36px;
+  height: 36px;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.scroll-button:hover {
+  background-color: var(--button-hover-bg);
+  color: var(--text-color);
+  border-color: var(--accent-color-1);
+}
+
+.concept-feed {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 20px;
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+/* Hide scrollbar for a cleaner look */
+.concept-feed::-webkit-scrollbar {
+  display: none;
+}
+.concept-feed {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.concept-card {
+  flex: 0 0 320px;
+  background-color: var(--header-bg);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: left;
+  border: 1px solid var(--panel-border);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-out;
+}
+
+.concept-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.concept-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.concept-card h3 {
+  margin-top: 0;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.concept-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-color-secondary);
+}
+
+.code-snippet {
+  background-color: var(--background-color);
+  padding: 15px;
+  border-radius: 5px;
+  font-family: 'Fira Code', monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 13px;
+  color: var(--text-color);
+}
