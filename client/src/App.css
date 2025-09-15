@@ -165,3 +165,51 @@ select {
   padding: 0 5px;
   color: var(--text-color-secondary);
 }
+/* --- ADD THIS ENTIRE BLOCK TO THE END OF YOUR CSS FILE --- */
+
+/* ==========================================================================
+   Responsive Design for Mobile
+   ========================================================================== */
+/* This rule applies only to screens 768px wide or smaller */
+@media (max-width: 768px) {
+  
+  /* --- Mobile Layout --- */
+  .app-main {
+    /* Change the main layout from side-by-side to vertical stacking */
+    flex-direction: column;
+  }
+
+  /* --- Mobile Navbar --- */
+  .navbar {
+    height: auto; /* Allow navbar to grow if needed */
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+  .app-title {
+    font-size: 20px;
+  }
+  .controls-container {
+    flex-wrap: wrap; /* Allow controls to wrap to the next line */
+    justify-content: center;
+  }
+
+  /* --- Mobile Panels --- */
+  .editor-container, .output-and-input-container {
+    flex: none; /* Remove flex sizing to allow natural height */
+  }
+  .editor-container {
+    /* Set a fixed, scrollable height for the editor on mobile */
+    height: 60vh; 
+  }
+
+  /* --- Mobile Concept Feed --- */
+  .concept-feed {
+    /* Change the feed from horizontal to vertical stacking */
+    flex-direction: column;
+    padding-bottom: 0;
+  }
+  .concept-card {
+    flex-basis: auto; /* Allow cards to take up full width */
+  }
+}
