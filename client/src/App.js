@@ -2,8 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import Editor from '@monaco-editor/react';
 import './App.css';
 import ConceptFeed from './ConceptFeed';
-import InfoModal from './InfoModal'; // Import the new modal
-import './InfoModal.css'; // Import the new modal's CSS
+import InfoModal from './InfoModal';
+import './InfoModal.css';
 import { pythonConcepts, pythonDefault } from './pythonConcepts';
 import { cppConcepts, cppDefault } from './cppConcepts';
 import { javascriptConcepts, javascriptDefault } from './javascriptConcepts';
@@ -32,7 +32,7 @@ function App() {
   const [concepts, setConcepts] = useState(pythonConcepts);
   const editorRef = useRef(null);
   const [theme, setTheme] = useState('dark');
-  const [isModalOpen, setIsModalOpen] = useState(false); // State for the modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleTheme = () => setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
 
@@ -52,7 +52,8 @@ function App() {
     setIsLoading(true); setOutput(''); setSuggestion('');
     const payload = { language, code, input };
     try {
-      const response = await fetch('http://localhost:8000/run', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+      // UPDATED URL
+      const response = await fetch('https://codeogram-server.onrender.com/run', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
       const data = await response.json();
       if (!response.ok) { throw new Error(data.output || `HTTP error!`); }
       setOutput(data.output || 'Execution complete.');
@@ -64,7 +65,8 @@ function App() {
     setIsDebugging(true); setSuggestion('🧠 The AI is thinking...');
     const payload = { code, error: output };
     try {
-      const response = await fetch('http://localhost:8000/debug', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+      // UPDATED URL
+      const response = await fetch('https://codeogram-server.onrender.com/debug', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
       const data = await response.json();
       if (!response.ok) { throw new Error(data.suggestion || `HTTP error!`); }
       setSuggestion(data.suggestion);
@@ -92,7 +94,6 @@ function App() {
   return (
     <div className="App" data-theme={theme}>
       {isModalOpen && <InfoModal onClose={() => setIsModalOpen(false)} />}
-      
       <nav className="navbar">
         <div className="navbar-brand"><img src="/codeOgram.png" alt="CodeOgram Logo" className="app-logo" /><h1 className="app-title">CodeOgram</h1></div>
         <div className="controls-container">
