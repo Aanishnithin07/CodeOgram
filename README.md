@@ -1,7 +1,6 @@
 # CodeoGram
 
 <p align="center">
-  <img src="./assets/codeogram-logo.png" alt="CodeoGram Logo" width="250"/> </p>
 
 <p align="center">
   A developer-centric social platform for showcasing projects, code snippets, and fostering collaborative feedback within a focused technical community.
